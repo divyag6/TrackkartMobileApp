@@ -1,0 +1,36 @@
+<ion-view  view-title="Reset Password">
+ 
+  
+  <ion-content class="has-header">
+  
+	<form ng-submit="">
+      <div class="list">
+       
+        <label class="item item-input">
+          <span class="input-label">Email ID:</span>
+          <input type="email" placeholder="Email ID" ng-model="reset.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type={{inputType}} placeholder="Password" ng-model="reset.password">
+        </label>
+       <label class="item item-input">
+          <span class="input-label">Confirm Password</span>
+          <input type={{inputType}} placeholder="Confirm Password" ng-model="reset.password_confirmation">
+        </label>
+        <label class="item item-checkbox item-checkbox-right">
+         
+  		<label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
+  		<label for="checkbox" ng-if="!passwordCheckbox">Show password</label> 
+  		<input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
+  		</label> 
+        <label class="item">
+          <button class="button button-block button-calm" ng-click="resetPassword()" ng-disabled="!reset.email || !reset.password" type="submit">
+          Reset Password</button>
+        </label>
+      </div>
+    </form>
+
+  </ion-content>
+
+</ion-view>

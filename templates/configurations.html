@@ -1,0 +1,31 @@
+<ion-view ng-init="showConfigurations()" view-title="Vendor Configurations">
+ 
+   <ion-nav-buttons side="right">
+    	<a id="add-button" class="button button-icon button-link ion-plus pull-right large" ng-controller="CreateConfigCtrl" ng-click="openModal()">
+    		
+    	</a>
+  </ion-nav-buttons>
+  <ion-content>
+  
+  	<ion-refresher class="padding-top" pulling-text="Pull To Refresh" on-refresh="refreshConfigurations()"
+           		   spinner="bubbles" refreshing-text="Fetching configurations..." >
+    </ion-refresher>
+    
+	<div class="row" ng-repeat="config in configs track by $index">
+		<div class="col col-10 col-center">
+			<a class="button button-icon ion-trash-a largex"  ng-click="deleteConfig($index)"  value="">
+				
+			</a>
+		</div>	
+		<div class="col col-25 col-center">{{config.name}}</div>
+		<div class="col col-55 col-center">{{config.email}}</div>
+		<div class="col col-10 col-center">
+			<a class="button button-icon ion-chevron-right small " ng-controller="UpdateConfigCtrl" ng-click="openModal($index)">
+			</a>
+		</div>
+		
+	</div>
+
+  </ion-content>
+
+</ion-view>

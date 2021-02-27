@@ -1,0 +1,31 @@
+<ion-view view-title="Charts" ng-controller="ChartsCtrl" ng-init="checkForOrders()">
+		
+	<ion-content class="padding">
+		
+		<ion-refresher class="padding-top" pulling-text="Pull To Refresh" on-refresh="refreshCharts()"
+           		   spinner="bubbles" refreshing-text="Updating charts..." >
+    	</ion-refresher>
+    	
+    	 <div class="card">
+        <div class="item item-divider item-calm">
+            Last Month Spend Trend
+        </div>
+        <div class="item item-text-wrap item-light">
+       
+            <canvas id="lmbar" class="chart chart-bar" chart-data="lmGraph.data" chart-labels="lmGraph.labels" chart-series='lmGraph.series' chart-options="lmGraph.options" height="200" chart-click="onClick"></canvas>
+       
+        </div>
+	    </div>
+	
+		 <div class="card">
+        <div class="item item-divider item-calm">
+            Last 6 Months Spend Trend
+        </div>
+        <div class="item item-text-wrap">
+       
+            <canvas id="lmbar" class="chart chart-bar" chart-data="graph.data" chart-labels="graph.labels" chart-series='graph.series' chart-options="graph.options" height="200" chart-click="onClick"></canvas>
+       
+        </div>
+	    </div>
+  	</ion-content>
+</ion-view>

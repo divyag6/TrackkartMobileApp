@@ -1,0 +1,219 @@
+/* Empty. Add your own CSS if you like */
+
+.icon:before .small {
+  font-size:15px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button.button-icon.button-link{
+	padding: 10px 15px;
+   	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+	text-shadow: 0 +1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.button.button-icon{
+	
+	display: inline-block !important;
+	vertical-align: middle !important;
+	position: relative;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.row{
+		border-bottom: 1px solid black;
+}
+ .row-clear {
+ 		border-bottom: none;
+ }
+ .col-left{
+ 	text-align:left;
+ 	padding-left:0px;
+	border-right:1px solid #e4e4e4;
+ }
+.col-center{
+	display: table-cell;
+  	vertical-align: middle;
+  	text-align: center !important;
+  	border-right:1px solid #e4e4e4;
+}
+.col-right{
+	text-align:right;
+	border-right:1px solid #e4e4e4;
+}
+.no-padding{
+	
+     padding: 0 !important;
+}
+
+.padding-top{
+	padding-top:35px !important;
+}
+.card-margin
+{
+     margin-bottom: -10 !important;
+     padding-bottom:0 !important;
+}
+.col-last{
+	display: table-cell;
+  	vertical-align: middle;
+  	text-align: center;
+}
+.content{
+	overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mynavbar{
+  	height: 75px !important;
+}
+
+.mynavbar .title{
+	height:60px !important;
+	line-height:75px !important;
+	display: inline-block;
+	vertical-align: middle;
+	text-align:center !important;
+}
+
+.item.item-input .hide-show{
+	color:blue;
+	font-size:11px;
+	right-margin:10px;
+}
+
+.bar-subheader.subheader-custom {
+    display: block;
+    height: auto;
+    top: 75px !important;
+}
+
+.has-header {
+   top:75px !important;
+}
+
+.item.item-input.item-stacked-label .textarea{
+	border:1px solid grey;
+	width:97% !important;
+	
+}
+.button{
+	vertical-align: middle !important;
+}
+.home .scroll-content {
+    background: url("http://localhost:8100/img/home.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+.custom-assertive{
+	border:none;   /*Removes all borders*/
+  	border-top: 2px solid;   /*Top Border for each menu item*/
+  	border-left: 2px solid;
+  	border-right:2px solid;
+ 	border-bottom:2px solid;   /*Bottom border for each menu item*/
+ 	border-color: #ef4e3a !important;   /*Sets colors for top and bottom border*/
+ 
+}
+.custom-balanced{
+	border:none;   /*Removes all borders*/
+  	border-top: 2px solid;   /*Top Border for each menu item*/
+  	border-left: 2px solid;
+  	border-right:2px solid;
+ 	border-bottom: 2px solid;   /*Bottom border for each menu item*/
+ 	border-color: #66cc33 !important;   /*Sets colors for top and bottom border*/
+ 
+}
+.custom-energized{
+	border:none;   /*Removes all borders*/
+  	border-top: 2px solid;   /*Top Border for each menu item*/
+  	border-left:2px solid;
+  	border-right:2px solid;
+ 	border-bottom:2px solid;   /*Bottom border for each menu item*/
+ 	border-color: #f0b840 !important;   /*Sets colors for top and bottom border*/
+ 
+}
+.float-right{
+	float:right;
+}
+
+.item.item-input .my-input {
+	width:92% !important;
+}
+.img{
+	display: inline-block !important;
+	vertical-align: top !important;
+	line-height:75px !important;
+	margin:0 auto;
+	padding-top:7px;
+}
+.img-home{
+	margin:0;
+    display: block;	
+    padding:5% 0;
+    vertical-align:middle !important;
+    width: 100%;
+}
+
+.home-view {
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: #000;
+}
+
+.button-link:hover {
+	color:white	!important;
+   text-decoration: underline !important; // changed from text:decoration:none
+}
+
+.sortorder:before {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+
+.sortorder.reverse:before {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+.tab-item.tab-item-active .icon, .tab-item.active .icon, .tab-item.activated .icon {
+    color: #11c1f3;
+}
+.link{
+	color:blue;
+	font-size:13px;
+	text-decoration:none;
+}
+.link:hover{
+	text-decoration:underline;
+}
+.icon-eye{
+	color:#484848;
+}
+.text{
+	color:black !important;
+}

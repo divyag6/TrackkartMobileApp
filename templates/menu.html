@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-energized mynavbar" align-title="center">
+     
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-link ion-navicon"  menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" >
+    <ion-header-bar class="bar-calm mynavbar">
+      <h1 class="title" ng-show="toggle()" ng-model="title">{{title}}</h1>  
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+      	<ion-item menu-close href="#/app/home">
+          Home
+        </ion-item>
+        <ion-item menu-close href="#/app/about">
+          About
+        </ion-item>
+        <ion-item menu-close href="#/app/contact">
+          Contact
+        </ion-item>
+        <ion-item menu-close ng-hide="isAuthenticated" ng-click="loginFromMenu()">
+          Login
+        </ion-item>
+        <ion-item menu-close ng-show="isAuthenticated" href="#/app/orders">
+          Orders
+        </ion-item>
+        <ion-item menu-close ng-show="isAuthenticated" href="#/app/configurations">
+          Vendor Configurations
+        </ion-item>
+        <ion-item menu-close ng-show="isAuthenticated" href="#/app/charts">
+          Charts
+        </ion-item>
+        <ion-item menu-close ng-show="isAuthenticated" ng-click="logout()">
+         Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

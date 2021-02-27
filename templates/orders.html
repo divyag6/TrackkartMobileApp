@@ -1,0 +1,81 @@
+<ion-view  ng-init="showOrders()" view-title="Orders">
+ 
+    
+  <ion-header-bar   class="bar-calm bar-subheader subheader-custom">
+  	
+  	<div class="row row-clear">
+		<div class="col col-25 col-center">
+			<button class="button button-clear button-link" ng-click="showFilters=!showFilters"> Vendor
+			</button>
+			<select ng-show="showFilters" ng-model="selected" ng-options="vendor as vendor.name for vendor in vendors"></select>
+		</div>
+		<div class="col col-45 col-center">
+			<button class="button button-clear button-link" ng-click="propertyName = 'paid'; reverse = !reverse">Amount
+				<span class="sortorder" ng-show="propertyName=='paid'"  ng-class="{reverse: reverse}"></span>
+			</button> 
+		</div>
+		<div class="col col-30 col-last">
+			<button class="button button-clear button-link" ng-click="propertyName = 'date'; reverse = !reverse">Date
+				<span class="sortorder" ng-show="propertyName=='date'"  ng-class="{reverse: reverse}"></span>
+			</button>		
+		</div>	
+	</div>
+	  
+ 	
+  </ion-header-bar>
+  
+  <ion-content class="padding-top padding">
+ 	
+ 	<ion-refresher class="padding-top" pulling-text="Pull To Refresh" on-refresh="refreshOrders()"
+           		   spinner="bubbles" refreshing-text="Fetching orders..." >
+    </ion-refresher>
+ 
+ 	<div class="list card {{order.barColor}}" ng-repeat="(index,order) in orders |  filter : customFilter | orderBy : sortFunction : reverse">
+	   <div class="item item-divider item-light {{order.barColor}} no-padding card-margin" ng-click="showDetails=!showDetails">
+	      <div class="row row-clear">
+	      	<div class="col col-25 col-left">
+		      	<a href="{{order.link}}" target="_blank">
+					{{order.vendor}}
+				</a>
+			</div>
+			<div class="col col-45 col-right" ng-show="order.indexOf(paid)!=-1">{{order.paid | currency:"Rs. "}}</div>
+			<div class="col col-30 col-last">{{order.date|date:'yyyy/MM/d'}}</div>
+		  </div>
+	   </div>
+	   
+	   <div class="item card-margin" ng-show="showDetails">
+   			Order No. : {{order.order_no}}
+   			<span class="float-right" ng-show="{{order.qty !== undefined}}">Qty: {{order.qty}}</span>
+   			
+		
+    		<div class="content" ng-repeat="item in getItems(order)">
+				<br>{{item.item}}<br>
+				
+				<span class={{item.textColor}}>{{item.shipment_status}}</span>
+			</div>
+		
+	   </div>
+	   
+	</div>   
+	
+	
+		
+<!--  	<div class="col" ng-show="order.indexOf(paid)!=-1">{{order.paid}}</div>
+		<div class="col" ng-hide="order.indexOf(paid)!=-1" ng-repeat="item in getItems($index)">
+			{{item.item_price}}
+		</div>-->
+		
+	<!-- <div class="col col-20">	
+		<div class="row row-clear" ng-repeat="item in getItems($index)">
+			<div class="col col-20 content">{{item.delivered_on}}</div>
+		</div>
+		</div>
+	<!--<div class="col col-center" ng-show="order.indexOf(qty)!=-1">{{order.qty}}</div>
+		<div class="col col-center" ng-hide="order.indexOf(qty)!=-1" ng-repeat="item in getItems($index)">
+			{{item.qty}}
+		</div>  -->	
+		
+
+  </ion-content>
+
+</ion-view>
